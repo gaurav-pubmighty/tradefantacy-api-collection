@@ -1,0 +1,92 @@
+opencollection: 1.0.0
+
+info:
+  name: TradeFantasy Engine API
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  auth:
+    type: bearer
+    token: "{{token}}"
+  variables:
+    - name: ssvToken
+      value: ""
+    - name: positionId
+      value: ""
+    - name: contestId
+      value: "2"
+  scripts:
+    - type: after-response
+      code: "// Global: every JSON response should carry the success envelope\r
+
+        if ((res.getHeader('Content-Type') || '').includes('application/json')) {\r
+
+        \  test('Has success envelope', function () {\r
+
+        \    var j = res.getBody();\r
+
+        \    expect(j).to.have.property('success');\r
+
+        \  });\r
+
+        }"
+
+docs:
+  content: |-
+    TradeFantasy trading-engine API + WebSocket test collection.
+
+    ## Setup
+
+    1. Start the server: `pnpm dev` (listens on port 5000).
+        
+    2. Make sure Redis is running (needed for SSV issue + contest join).
+        
+    3. This collection sends `Authorization: Bearer {{token}}` on every request (set at collection level).
+        
+
+    ## Variables (Collection)
+
+    - `baseUrl` = [http://localhost:5000](http://localhost:5000)
+        
+    - `wsUrl` = ws://localhost:5000/ws
+        
+    - `token` = test-token (any non-empty value works against the current mock auth)
+        
+    - `contestId`\= contest-001
+        
+    - `userRef` = player-001
+        
+    - `ssvToken` = (auto-filled by 'Issue SSV')
+        
+    - `positionId` = (auto-filled by 'Place Market Order')
+        
+
+    ## Recommended run order (chained)
+
+    Health → Market Data → Issue SSV → Join Contest → Place Market Order → Reads → Close/Refill/SquareOff.  
+    The SSV token and position id are captured automatically into collection variables.
+
+    ## Heads-up (from BUGS.md)
+
+    - The current mock auth adds a \~5s delay on EVERY request — responses are slow, that's expected.
+        
+    - Risk-loop features (pending triggers, SL/TP, liquidation) won't fire until BUGS.md A3 is fixed.
+        
+    - `userRef` is included in request bodies to satisfy the current validation; after fix A4 it will be derived from the token.
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

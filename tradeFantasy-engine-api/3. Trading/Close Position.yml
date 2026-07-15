@@ -1,0 +1,30 @@
+info:
+  name: Close Position
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/user/contest/close"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "contestId": "{{contestId}}",
+        "positionId": "{{positionId}}"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: test('200 or 404 (if no open position captured)', () => expect([200,404]).to.include(res.getStatus()));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,24 @@
+info:
+  name: Price (single symbol)
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/user/price?symbol=BTC"
+  params:
+    - name: symbol
+      value: BTC
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: test('200 or 503 (feed may be warming up)', () => expect([200,503]).to.include(res.getStatus()));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

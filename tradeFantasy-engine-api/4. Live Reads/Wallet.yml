@@ -1,0 +1,20 @@
+info:
+  name: Wallet
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/user/contest/{{contestId}}/wallet"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: test('200 or 404', () => expect([200,404]).to.include(res.getStatus()));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

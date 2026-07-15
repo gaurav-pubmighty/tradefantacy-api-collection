@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "tradefantacy-api-collection"
+  type: workspace
+
+collections:
+  - name: "TradeFantasy Engine API"
+    path: "tradeFantasy-engine-api"
+
+specs:
+
+docs: ''

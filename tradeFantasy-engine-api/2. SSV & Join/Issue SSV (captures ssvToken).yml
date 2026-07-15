@@ -1,0 +1,35 @@
+info:
+  name: Issue SSV (captures ssvToken)
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/user/ssv/issue"
+  headers:
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test('200 OK', () => expect(res.getStatus()).to.equal(200));\r
+
+        var j = res.getBody();\r
+
+        test('Returns ssvToken', () => expect(j.data).to.have.property('ssvToken'));\r
+
+        if (j.data && j.data.ssvToken) {\r
+
+        \  pm.collectionVariables.set('ssvToken', j.data.ssvToken);\r
+
+        \  console.log('Captured ssvToken:', j.data.ssvToken);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,49 @@
+info:
+  name: Place Market Order (captures positionId)
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/user/contest/order"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |
+      {
+        "contestId": "{{contestId}}",
+        "symbol": "BTC",
+        "side": "buy",
+        "qty": 1
+
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "test('200 / 402 / 503 (margin or feed dependent)', () => expect([200,402,503]).to.include(res.getStatus()));\r
+
+        if (res.getStatus() === 200) {\r
+
+        \  var d = res.getBody().data;\r
+
+        \  test('Has position', () => expect(d).to.have.property('position'));\r
+
+        \  if (d.position && d.position.id) {\r
+
+        \    pm.collectionVariables.set('positionId', d.position.id);\r
+
+        \    console.log('Captured positionId:', d.position.id);\r
+
+        \  }\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

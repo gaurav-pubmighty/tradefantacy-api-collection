@@ -1,0 +1,29 @@
+info:
+  name: Place Market Order w/ SL+TP (AAPL)
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/user/contest/order"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "contestId": "{{contestId}}",
+        "symbol": "BTC",
+        "side": "buy",
+        "qty": 1,
+        "sl": 62417.22,
+        "tp": 62617.22
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
