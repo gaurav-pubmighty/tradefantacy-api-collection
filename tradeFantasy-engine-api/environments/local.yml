@@ -1,8 +1,0 @@
-name: local
-variables:
-  - name: baseUrl
-    value: https://tradefantacy-engine.dev
-  - name: wsUrl
-    value: ws://tradefantacy-engine.dev/ws
-  - name: token
-    value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4

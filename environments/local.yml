@@ -1,0 +1,10 @@
+name: local
+variables:
+  - name: core-base-url
+    value: http://localhost:5000
+  - name: core-ws-url
+    value: ws://localhost:5000/ws
+  - name: admin-token
+    value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4
+  - name: user-token
+    value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4

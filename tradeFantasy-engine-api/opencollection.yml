@@ -25,6 +25,12 @@ request:
       value: ""
     - name: contestId
       value: "2"
+    - name: baseUrl
+      value: "{{core-base-url}}"
+    - name: wsUrl
+      value: "{{core-ws-url}}"
+    - name: token
+      value: "{{user-token}}"
   scripts:
     - type: after-response
       code: "// Global: every JSON response should carry the success envelope\r

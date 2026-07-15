@@ -6,6 +6,8 @@ info:
 collections:
   - name: "TradeFantasy Engine API"
     path: "tradeFantasy-engine-api"
+  - name: "TradeFantasy Engine Ws"
+    path: "TradeFantasy Engine Ws"
 
 specs:
 
