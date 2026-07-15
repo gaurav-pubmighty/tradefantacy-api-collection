@@ -11,4 +11,7 @@ collections:
 
 specs:
 
-docs: ''
+docs: |-
+  # TradeFantasy API Collection
+  
+  Welcome to the **TradeFantasy API Collection** repository! This directory contains an OpenCollection / Bruno workspace with pre-configured requests, environment variables, validation tests, and WebSocket connections for interacting with the **TradeFantasy Engine API**.
