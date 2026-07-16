@@ -1,11 +1,11 @@
 info:
-  name: Admin route root
+  name: root
   type: http
-  seq: 3
+  seq: 1
 
 http:
   method: GET
-  url: "{{baseUrl}}/admin/"
+  url: "{{admin-base-url}}/"
   auth: inherit
 
 settings:

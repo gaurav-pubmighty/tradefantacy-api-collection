@@ -1,7 +1,0 @@
-info:
-  name: 0. Health & Negative
-  type: folder
-  seq: 1
-
-request:
-  auth: inherit
