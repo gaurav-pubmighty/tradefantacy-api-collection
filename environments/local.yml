@@ -5,6 +5,6 @@ variables:
   - name: core-ws-url
     value: ws://localhost:5000/ws
   - name: admin-token
-    value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4
+    value: ujhgbvgjksdjagfsdf-adkjfhgahkdfhhgaf-gadfghadfhfkhg
   - name: user-token
     value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4
