@@ -1,0 +1,12 @@
+info:
+  name: Admin
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit
+  variables:
+    - name: admin-base-url
+      value: "{{baseUrl}}/admin"
+    - name: token
+      value: "{{admin-token}}"
