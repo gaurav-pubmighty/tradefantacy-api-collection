@@ -17,7 +17,7 @@ config:
 request:
   variables:
     - name: wsUrl
-      value: "{{core-ws-url}}"
+      value: "{{core-server-ws-url}}"
 bundled: false
 extensions:
   bruno:

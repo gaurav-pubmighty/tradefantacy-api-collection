@@ -17,20 +17,12 @@ config:
 request:
   auth:
     type: bearer
-    token: "{{token}}"
+    token: "{{user-token}}"
   variables:
-    - name: ssvToken
-      value: ""
-    - name: positionId
-      value: ""
     - name: contestId
       value: "2"
     - name: baseUrl
-      value: "{{core-base-url}}"
-    - name: wsUrl
-      value: "{{core-ws-url}}"
-    - name: token
-      value: "{{user-token}}"
+      value: "{{core-server-url}}"
   scripts:
     - type: after-response
       code: "// Global: every JSON response should carry the success envelope\r

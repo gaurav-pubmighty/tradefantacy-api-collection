@@ -1,0 +1,16 @@
+info:
+  name: Core
+  type: folder
+  seq: 8
+
+request:
+  auth:
+    type: apikey
+    key: authorization
+    value: "{{core-api-kay}}"
+    placement: header
+  variables:
+    - name: core-base-url
+      value: "{{baseUrl}}/core"
+    - name: apikey
+      value: "{{core-api-kay}}"

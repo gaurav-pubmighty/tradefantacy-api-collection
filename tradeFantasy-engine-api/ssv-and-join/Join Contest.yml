@@ -1,11 +1,11 @@
 info:
-  name: Refill Wallet
+  name: Join Contest
   type: http
-  seq: 5
+  seq: 2
 
 http:
   method: POST
-  url: "{{baseUrl}}/user/contest/refill"
+  url: "{{baseUrl}}/user/contest/join"
   headers:
     - name: Content-Type
       value: application/json
@@ -65,6 +65,16 @@ runtime:
           console.error("Error while fetching ssvToken:", err);
           throw err;
         }
+    - type: after-response
+      code: "test('200 OK', () => expect(res.getStatus()).to.equal(200));\r
+
+        test('Has wallet', () => {\r
+
+        \  var d = res.getBody().data;\r
+
+        \  expect(d).to.have.property('wallet');\r
+
+        });"
 
 settings:
   encodeUrl: true

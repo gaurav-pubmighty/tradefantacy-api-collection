@@ -1,10 +1,17 @@
 name: local
 variables:
-  - name: core-base-url
+  - name: core-server-url
     value: http://localhost:5000
-  - name: core-ws-url
+    description: ""
+  - name: core-server-ws-url
     value: ws://localhost:5000/ws
+    description: ""
   - name: admin-token
     value: ujhgbvgjksdjagfsdf-adkjfhgahkdfhhgaf-gadfghadfhfkhg
+    description: ""
   - name: user-token
-    value: gRiDNmrh3THhiirwujlpy07Z-jMhmaBx6guxfbgJDv4
+    value: 2BfOQaJisOJ5yOENe7SV3ixQubYZk-v7d1KP8_0oP-I
+    description: ""
+  - name: core-api-kay
+    value: 0b78b82475fe45de81139626057e6e94
+    description: ""
