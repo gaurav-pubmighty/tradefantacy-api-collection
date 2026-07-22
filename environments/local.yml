@@ -7,11 +7,14 @@ variables:
     value: ws://localhost:5000/ws
     description: ""
   - name: admin-token
-    value: fYf5h5yUY_XPQJbwFcsiIe6Dl9mh64mudBIn5Z0zW2w
+    value: ujhgbvgjksdjagfsdf-adkjfhgahkdfhhgaf-gadfghadfhfkhg
     description: ""
   - name: user-token
     value: 2BfOQaJisOJ5yOENe7SV3ixQubYZk-v7d1KP8_0oP-I
     description: ""
   - name: core-api-kay
     value: 0b78b82475fe45de81139626057e6e94
+    description: ""
+  - name: main-server-url
+    value: https://trading.qwizzo.in/v1
     description: ""

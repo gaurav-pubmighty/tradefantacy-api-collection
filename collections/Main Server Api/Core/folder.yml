@@ -1,0 +1,16 @@
+info:
+  name: Core
+  type: folder
+  seq: 1
+
+request:
+  auth:
+    type: apikey
+    key: Authorization
+    value: "{{auth-key}}"
+    placement: header
+  variables:
+    - name: core-base-url
+      value: "{{baseUrl}}/core"
+    - name: auth-key
+      value: 0b78b82475fe45de81139626057e6e94
