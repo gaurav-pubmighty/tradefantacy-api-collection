@@ -5,9 +5,11 @@ info:
 
 collections:
   - name: "TradeFantasy Engine API"
-    path: "tradeFantasy-engine-api"
+    path: "collections/tradeFantasy-engine-api"
   - name: "TradeFantasy Engine Ws"
-    path: "TradeFantasy Engine Ws"
+    path: "collections/TradeFantasy Engine Ws"
+  - name: "Main Server Api"
+    path: "collections/Main Server Api"
 
 specs:
 
