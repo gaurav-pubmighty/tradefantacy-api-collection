@@ -6,8 +6,16 @@ info:
 websocket:
   url: "{{wsUrl}}/market"
   message:
-    type: json
-    data: "{}"
+    - title: message 1
+      selected: false
+      message:
+        type: json
+        data: |-
+          {
+            "action": "subscribe",
+            "topic": "contest:subscribe",
+            "contestId": "21"
+          }
   auth:
     type: bearer
     token: "{{user-token}}"

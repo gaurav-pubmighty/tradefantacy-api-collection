@@ -19,6 +19,9 @@ http:
   auth: inherit
 
 runtime:
+  variables:
+    - name: ssvToken
+      value: hii
   scripts:
     - type: before-request
       code: |-

@@ -20,7 +20,7 @@ request:
     token: "{{user-token}}"
   variables:
     - name: contestId
-      value: "2"
+      value: "21"
     - name: baseUrl
       value: "{{core-server-url}}"
   scripts:

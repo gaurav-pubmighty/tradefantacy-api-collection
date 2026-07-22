@@ -7,7 +7,7 @@ variables:
     value: ws://localhost:5000/ws
     description: ""
   - name: admin-token
-    value: ujhgbvgjksdjagfsdf-adkjfhgahkdfhhgaf-gadfghadfhfkhg
+    value: fYf5h5yUY_XPQJbwFcsiIe6Dl9mh64mudBIn5Z0zW2w
     description: ""
   - name: user-token
     value: 2BfOQaJisOJ5yOENe7SV3ixQubYZk-v7d1KP8_0oP-I
