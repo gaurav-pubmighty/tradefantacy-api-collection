@@ -1,10 +1,10 @@
 name: local
 variables:
   - name: core-server-url
-    value: http://localhost:5000
+    value: http://trading-engine.qwizzo.in
     description: ""
   - name: core-server-ws-url
-    value: ws://localhost:5000/ws
+    value: ws://trading-engine.qwizzo.in/ws
     description: ""
   - name: admin-token
     value: ujhgbvgjksdjagfsdf-adkjfhgahkdfhhgaf-gadfghadfhfkhg
